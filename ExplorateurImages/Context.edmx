@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ContextModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ContextModelStoreContainer">
+          <EntitySet Name="SysBasisImage" EntityType="ContextModel.Store.SysBasisImage" store:Type="Tables" Schema="system" />
+        </EntityContainer>
+        <EntityType Name="SysBasisImage">
+          <Key>
+            <PropertyRef Name="ImageNum" />
+          </Key>
+          <Property Name="ImageNum" Type="int" Nullable="false" />
+          <Property Name="ImageId" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="ImageCategoryId" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Width" Type="int" Nullable="false" />
+          <Property Name="Height" Type="int" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" Nullable="false" MaxLength="260" />
+          <Property Name="InFile" Type="smallint" Nullable="false" />
+          <Property Name="md5" Type="nvarchar" MaxLength="32" />
+          <Property Name="DataImg" Type="varbinary(max)" />
+          <Property Name="DateUpdated" Type="datetime" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ContextModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SysBasisImage" EntityType="ContextModel.SysBasisImage" />
+        </EntityContainer>
+        <EntityType Name="SysBasisImage">
+          <Key>
+            <PropertyRef Name="ImageNum" />
+          </Key>
+          <Property Name="ImageNum" Type="Int32" Nullable="false" />
+          <Property Name="ImageId" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="ImageCategoryId" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="Width" Type="Int32" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="260" Unicode="true" FixedLength="false" />
+          <Property Name="InFile" Type="Int16" Nullable="false" />
+          <Property Name="md5" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="DataImg" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DateUpdated" Type="DateTime" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ContextModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="SysBasisImage">
+            <EntityTypeMapping TypeName="ContextModel.SysBasisImage">
+              <MappingFragment StoreEntitySet="SysBasisImage">
+                <ScalarProperty Name="ImageNum" ColumnName="ImageNum" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="ImageCategoryId" ColumnName="ImageCategoryId" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="InFile" ColumnName="InFile" />
+                <ScalarProperty Name="md5" ColumnName="md5" />
+                <ScalarProperty Name="DataImg" ColumnName="DataImg" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Context">
+        <EntityTypeShape EntityType="ContextModel.SysBasisImage" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5783902994791665" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
